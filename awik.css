@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.background .bg {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+nav {
+  box-sizing: border-box;
+  position: absolute;
+  background-image: linear-gradient(#112f53, rgba(255, 255, 255, 0));
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0.5rem 3rem;
+}
+nav .logo img {
+  width: 65px;
+  margin-left: -10px;
+  margin-top: 2px;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  align-items: center;
+}
+nav ul li a {
+  text-decoration: none;
+  font-family: "segoe UI", sans-serif;
+  color: white;
+  font-weight: 600;
+  padding: 6px 1px;
+  transition: all;
+  transition-duration: 300ms;
+  border-bottom: 1px solid rgba(255, 68, 0, 0);
+}
+nav ul li a:hover {
+  color: #c1e0fc;
+  border-bottom: 1px solid #c1e0fc;
+}
+.header-text {
+  position: absolute;
+  left: 35px;
+  top: 30%;
+}
+.header-text h1 {
+  font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+  color: white;
+  font-size: 40px;
+  font-weight: 700;
+}
+.header-text h1 .text1 {
+  color: #c1e0fc;
+}
+.main-logo .wajah {
+  position: absolute;
+  right: 80px;
+  top: 78px;
+  width: 30%;
+  height: 90%;
+}
+/* Slider Card */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+.wrapper {
+  max-width: 800px;
+  width: 70%;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  bottom: 50px;
+  left: 34px;
+}
+.wrapper .carousel {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 3) - 12px);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 16px;
+  border-radius: 8px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+.carousel.no-transition {
+  scroll-behavior: auto;
+}
+.carousel.dragging {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+.carousel.dragging .card {
+  cursor: grab;
+  user-select: none;
+}
+.carousel :where(.card, .img) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carousel .card {
+  scroll-snap-align: start;
+  height: 330px;
+  list-style: none;
+  background-image: linear-gradient(#1b5da0, rgba(255, 255, 255, 0.3));
+  cursor: pointer;
+  padding-bottom: 15px;
+  flex-direction: column;
+  border-radius: 15px;
+}
+.carousel .card .img {
+  background: #c1e0fc;
+  height: 148px;
+  width: 148px;
+  border-radius: 60%;
+}
+.card .img img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid #ffff;
+}
+.carousel .card h2 {
+  font-weight: 500;
+  font-size: 1.56rem;
+  margin: 30px 0 5px;
+  color: #fff;
+}
+.carousel .card span {
+  color: black;
+  font-size: 1.31rem;
+}
+
+@media screen and (max-width: 900px) {
+  .wrapper .carousel {
+    grid-auto-columns: calc((100% / 2) - 9px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .wrapper .carousel {
+    grid-auto-columns: 100%;
+  }
+}
